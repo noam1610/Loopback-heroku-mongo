@@ -72,9 +72,9 @@ slc loopback tempFolder
 In temfolder, open the package.json
 
 Copy the 3 sections : 
-    ⋅⋅* dependencies
-    ⋅⋅* devDependencies
-    ⋅⋅* optionalDependencies
+  * dependencies
+  * devDependencies
+  * optionalDependencies
 
 Paste it in the initial package.json (located in the root directory).
 
