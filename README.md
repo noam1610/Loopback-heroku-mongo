@@ -9,15 +9,16 @@ In this tutorial we are going to create a server :
 
 ### Create a new repo
 
-    On git, create manually a new repository 
+On git, create manually a new repository 
 
-    Then, on your laptop create a folder :
+Then, on your laptop create a folder :
 
 ```
 mkdir my-new-folder
 ```
 
-    Once it's done, associate the repo and the folder :
+Once it's done, associate the repo and the folder :
+
 ```
     git init
     git commit -m "first commit"
