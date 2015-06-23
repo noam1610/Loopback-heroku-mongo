@@ -90,9 +90,71 @@ npm install
 
 ### Use a generator
 
+Let's create an object which will be stored in the database : subsider
+
+```
+slc loopback:model
+```
+Now let's answer the questions :
 
 
+Next Step:
+```
+slc loopback:datasource
+```
 
+Modify the code :
+
+Go to common/models 
+You have two files : subsider.js and subsider.json
+
+In the first one add this :
+
+```Javascript
+module.exports = function(Subsider) {
+    Subsider.sharedClass.find('create', true).shared = true;
+    Subsider.sharedClass.find('update', true).shared = false;
+    Subsider.sharedClass.find('upsert', true).shared = false; 
+    Subsider.sharedClass.find('updateAttributes', false).shared = false;
+    Subsider.sharedClass.find('deleteById', true).shared = false;
+    Subsider.sharedClass.find('find', true).shared = false; 
+    Subsider.sharedClass.find('findById', true).shared = false; 
+    Subsider.sharedClass.find('count', true).shared = false; 
+    Subsider.sharedClass.find('exists', true).shared = false; 
+    Subsider.sharedClass.find('findOne', true).shared = false;
+};
+```
+
+
+## Integrating Heroku
+
+First, you have to go to [Heroku!](https://www.heroku.com) and create an account.
+Then you have to install the [Heroku toolbelt](https://toolbelt.heroku.com).
+
+Now you can login and create a new app :
+
+```
+$ heroku login
+Enter your Heroku credentials.
+Email: adam@example.com
+Password (typing will be hidden):
+Authentication successful.
+```
+```
+$ heroku create
+```
+
+In your server folder, you have to create a new file called datasources.heroku.js :
+
+```Javascript
+'use strict';
+
+module.exports = {
+    mongo: {
+        url: process.env.MONGO_URL
+    }
+};
+```
 
 
 
