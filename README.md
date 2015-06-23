@@ -161,6 +161,7 @@ Then, in the root directory create a file **Procfile** with no extension :
 ```
 web: node server/server.js
 ```
+## Mongo
 
 The last file to change is datasources.js
 It should looks like this :
@@ -176,6 +177,8 @@ It should looks like this :
   }
 }
 ```
+
+But before running to have to create manually a database in [Mongolab](https://mongolab.com)
 
 
 
