@@ -156,7 +156,26 @@ module.exports = {
 };
 ```
 
+Then, in the root directory create a file **Procfile** with no extension :
 
+```
+web: node server/server.js
+```
+
+The last file to change is datasources.js
+It should looks like this :
+```JSON
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongo": {
+    "name": "mongo",
+    "connector": "mongodb"
+  }
+}
+```
 
 
 
