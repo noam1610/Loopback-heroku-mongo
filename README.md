@@ -82,7 +82,7 @@ This package.json looks like :
 ```
 
 
-### Create the data of the server
+### Some required files :
 
 First :
 In your folder and from the terminal :
@@ -103,7 +103,7 @@ You will see this :
 
 Only choose **lint** **test** **changelog** and **release**
 
-
+#### Using Loopback
 
 Make sure you have slc installed.
 To check it you can write slc in the terminal :
@@ -169,11 +169,11 @@ Now let's answer the questions :
 
 ![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/loopback-model.png "Logo Title Text 1")
 
-We only create an object with an atribute : **name**
+We only create an object with an atribute : sta**name**
 ![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/loopback-model-object.png "Logo Title Text 1")
 
 
-Next Step:
+######Next Step:
 ```
 slc loopback:datasource
 ```
@@ -183,31 +183,31 @@ Answer the questions
 
 Modify the code :
 
-Go to common/models 
+Go to common/models  
 You have two files : subsider.js and subsider.json
 
-In the first one add this :
+In the first one (subsider.js) add this :
 
 ```Javascript
-module.exports = function(Subsider) {
-    Subsider.sharedClass.find('create', true).shared = true;
-    Subsider.sharedClass.find('update', true).shared = false;
-    Subsider.sharedClass.find('upsert', true).shared = false; 
-    Subsider.sharedClass.find('updateAttributes', false).shared = false;
-    Subsider.sharedClass.find('deleteById', true).shared = false;
-    Subsider.sharedClass.find('find', true).shared = false; 
-    Subsider.sharedClass.find('findById', true).shared = false; 
-    Subsider.sharedClass.find('count', true).shared = false; 
-    Subsider.sharedClass.find('exists', true).shared = false; 
-    Subsider.sharedClass.find('findOne', true).shared = false;
+module.exports = function(subsider) {
+    subsider.sharedClass.find('create', true).shared = true;
+    subsider.sharedClass.find('update', true).shared = false;
+    subsider.sharedClass.find('upsert', true).shared = false; 
+    sbsider.sharedClass.find('updateAttributes', false).shared = false;
+    subsider.sharedClass.find('deleteById', true).shared = false;
+    subsider.sharedClass.find('find', true).shared = false; 
+    subsider.sharedClass.find('findById', true).shared = false; 
+    subsider.sharedClass.find('count', true).shared = false; 
+    subsider.sharedClass.find('exists', true).shared = false; 
+    subsider.sharedClass.find('findOne', true).shared = false;
 };
 ```
 
 
 ## Integrating Heroku
 
-First, you have to go to [Heroku!](https://www.heroku.com) and create an account.
-Then you have to install the [Heroku toolbelt](https://toolbelt.heroku.com).
+First, you have to go to [Heroku!](https://www.heroku.com) and create an account.  
+Then you have to install the [Heroku toolbelt](https://toolbelt.heroku.com).  
 
 Now you can login and create a new app :
 
@@ -220,8 +220,15 @@ Authentication successful.
 ```
 
 ```
-$ heroku create
+ heroku create
 ```
+By default, Heroku will give your app a crazy name such as **frozen-atoll-1232.herokuapp.com**
+
+If you want to name the app :
+```
+ heroku create nameOfMyApp
+```
+
 
 In your server folder, you have to create a new file called datasources.heroku.js :
 
@@ -240,6 +247,8 @@ Then, in the root directory create a file **Procfile** with no extension :
 ```
 web: node server/server.js
 ```
+The procfile is used by Heroku to know which language you use and to start to read the code with a specific file, here server/server.js
+
 ## Mongo
 
 The last file to change is datasources.js
@@ -257,9 +266,23 @@ It should looks like this :
 }
 ```
 
+what's more, don't forget to check in model-config that your object is linked with your datasource :
+```JSON
+"subsider": {
+        "dataSource": "mongo",
+        "public": true
+    }
+```
+
 But before running to have to create manually a database in [Mongolab](https://mongolab.com)
 
 You have to create a user for this database: with dbuser and dbpassword
+
+![mongolabb](https://cloud.githubusercontent.com/assets/8570784/8331269/008705dc-1a90-11e5-88e3-f739b8ca9819.png)
+
+Then :
+
+![usermongo](https://cloud.githubusercontent.com/assets/8570784/8331334/401930f8-1a90-11e5-9ae7-ef4ecd308ccb.png)
 
 Copy the uri given.
 It should look like :
@@ -287,11 +310,5 @@ Now let's hope it works:
 open heroku
 ```
 
-REM = Don't forget to check in model-config that your object is linked with your datasource :
-```JSON
-"subsider": {
-        "dataSource": "mongo",
-        "public": true
-    }
-```
+
 
