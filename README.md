@@ -47,9 +47,11 @@ Don't forget the :
 npm init
 ```
 
-This will create you a package.json
+This will create you a package.json  
 It's a very important file. Keep it !
-This package.json looks like :
+  Indeed, this file is in a way the id of the preoject.
+  It stores all the dependencies needed to run the project and some data around the author, the git repository ...
+This package.json looks like :  
 ```JSON
 {
   "name": "test-server",
