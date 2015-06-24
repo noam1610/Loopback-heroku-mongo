@@ -191,6 +191,8 @@ It should looks like this :
 
 But before running to have to create manually a database in [Mongolab](https://mongolab.com)
 
+You have to create a user for this database: with dbuser and dbpassword
+
 Copy the uri given.
 It should look like :
 
