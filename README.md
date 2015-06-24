@@ -129,7 +129,7 @@ Copy the 3 sections :
   * devDependencies
   * optionalDependencies
 
-```
+```JSON
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
