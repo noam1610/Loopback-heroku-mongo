@@ -215,10 +215,7 @@ git push heroku
 Now let's hope it works:
 ```
 open heroku
-``
-
-
-
+```
 
 REM = Don't forget to check in model-config that your object is linked with your datasource :
 ```JSON
