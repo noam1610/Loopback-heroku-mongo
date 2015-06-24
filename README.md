@@ -38,7 +38,7 @@ npm init
 This will create you a package.json
 It's a very important file. Keep it !
 
-### Use a generator
+### Create the data of the server
 
 First :
 
@@ -100,11 +100,18 @@ slc loopback:model
 ```
 Now let's answer the questions :
 
+![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/loopback-model.png "Logo Title Text 1")
+
+![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/loopback-model-object.png "Logo Title Text 1")
+
 
 Next Step:
 ```
 slc loopback:datasource
 ```
+Answer the questions
+![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/loopback-datasource.png "Logo Title Text 1")
+
 
 Modify the code :
 
@@ -143,6 +150,7 @@ Email: adam@example.com
 Password (typing will be hidden):
 Authentication successful.
 ```
+
 ```
 $ heroku create
 ```
@@ -183,14 +191,40 @@ It should looks like this :
 
 But before running to have to create manually a database in [Mongolab](https://mongolab.com)
 
+Copy the uri given.
+It should look like :
+
+```
+mongodb://<dbuser>:<dbpassword>@ds061148.mongolab.com:61148/tuto-server
+```
+Don't forget to change dbuser and dbpassword without <> 
+
+Then in the terminal write :
+```
+heroku config:set NODE_ENV=heroku
+heroku config:set MONGO_URL=mongodb://myuser:mypassword@ds061148.mongolab.com:61148/tuto-server
+```
+
+Now we can commit and push:
+```
+git cm "feat(app):yo!!"
+git push
+git push heroku
+```
+
+Now let's hope it works:
+```
+open heroku
+``
 
 
 
 
-
-
-
-
-
-
+REM = Don't forget to check in model-config that your object is linked with your datasource :
+```JSON
+"subsider": {
+        "dataSource": "mongo",
+        "public": true
+    }
+```
 
