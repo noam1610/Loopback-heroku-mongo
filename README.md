@@ -110,7 +110,7 @@ Next Step:
 slc loopback:datasource
 ```
 Answer the questions
-![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/loopback-datasource.png "Logo Title Text 1")
+![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/datasource.png "Logo Title Text 1")
 
 
 Modify the code :
