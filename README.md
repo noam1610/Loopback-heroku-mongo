@@ -53,9 +53,10 @@ yo sublime:gulps
 ```
 You will see this :
 
+![alt text](https://github.com/noam1610/Loopback-heroku-mongo/blob/master/images/sublime.png "Logo Title Text 1")
+
+
 Only choose **lint** **test** **changelog** and **release**
-Inline-style: 
-![alt text](https://github.com/noam1610/Loopback-heroku-mongo/images/sublime.png "Logo Title Text 1")
 
 
 Make sure you have slc installed.
