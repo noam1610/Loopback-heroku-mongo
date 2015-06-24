@@ -22,7 +22,7 @@ cd my-new-folder
 ```
 
 Once it's done, associate the repo and the folder :
-
+Use the command lines given in Github 
 ```
     git init
     git commit -m "first commit"
@@ -54,6 +54,8 @@ yo sublime:gulps
 You will see this :
 
 Only choose **lint** **test** **changelog** and **release**
+Inline-style: 
+![alt text](https://github.com/noam1610/Loopback-heroku-mongo/images/sublime.png "Logo Title Text 1")
 
 
 Make sure you have slc installed.
