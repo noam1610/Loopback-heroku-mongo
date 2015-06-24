@@ -49,7 +49,7 @@ npm init
 
 This will create you a package.json  
 It's a very important file. Keep it !
-  Indeed, this file is in a way the id of the preject.
+  Indeed, this file is in a way the id of the project.
   It stores all the dependencies needed to run the project and some data around the author, the git repository ...
 This package.json looks like :  
 ```JSON
